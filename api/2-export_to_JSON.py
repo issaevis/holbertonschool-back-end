@@ -38,5 +38,7 @@ if __name__ == "__main__":
                 "username": user["username"]
             })
 
-    with open("USER_ID.json", "w") as f:
+    filename = "{}".format(user["id"]) + ".csv"
+
+    with open(filename, "w", newline="") as f:
         json.dump({str(user["id"]): user_tasks}, f, indent=2)
