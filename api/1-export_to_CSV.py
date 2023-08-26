@@ -29,7 +29,9 @@ if __name__ == "__main__":
         print("User not found")
         sys.exit(1)
 
-    with open("USER_ID.csv", "w", newline="") as f:
+    filename = "{}".format(user["id"]) + ".csv"
+
+    with open(filename, "w", newline="") as f:
         writer = csv.writer(f, delimiter=',', quoting=csv.QUOTE_ALL)
         for todo in todos:
             if todo["userId"] == user["id"]:
